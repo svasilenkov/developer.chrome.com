@@ -1,11 +1,13 @@
 ---
-layout: 'layouts/doc-post.njk'
+layout: layouts/doc-post.njk
 title: コンバージョン測定APIから Attribution Reporting APIへの移行ガイド（Chrome 92）
 subhead: |2-
 
+
+
   Conversion Measurement（コンバージョン測定）APIがChrome92で変更されます。
-date: 2021-06-22
-updated: 2021-06-22
+date: '2021-06-22'
+updated: '2021-06-22'
 authors:
   - maudn
 ---
@@ -65,8 +67,8 @@ authors:
 <th style="text-align: left;">新しいコード</th>
 </tr></thead>
 <tbody><tr>
-<td><code>document.featurePolicy.features()<br>.includes('conversion-measurement')</code></td>
-<td><code>document.featurePolicy.features()<br>.includes('attribution-reporting')</code></td>
+<td><code>document.featurePolicy.features()&lt;br&gt;.includes('conversion-measurement')</code></td>
+<td><code>document.featurePolicy.features()&lt;br&gt;.includes('attribution-reporting')</code></td>
 </tr></tbody>
 </table>
 
@@ -134,8 +136,11 @@ window.open(
 </tr></thead>
 <tbody><tr>
 <td>期待されるブラウザからのリクエスト</td>
-<td><code>.well-known/register-conversion?impression-data=&conversion-data={DATA}&attribution-credit=100</code></td>
-<td>
-<code>.well-known/attribution-reporting/trigger-attribution</td> </tr> <tr> <td>着信レポート</td> <td>URLパラメータとして送信</td> <td>リクエスト本文でJSONとして送信<br> <br>レポートデータは、<strong>リクエストの本文にJSONオブジェクトとして含まれ</strong>次のキーを使います。<br> <code>source_event_id</code> ：以前は<code>impression-data</code>のアトリビューションソースに設定された64ビットのイベントIDでした。<br> <code>trigger_data</code> ：以前は<code>conversion-data</code>のアトリビューショントリガーリダイレクトの3ビットデータセットでした。<br><br> ⚠️ <code>credit</code>が削除されました。</td>
+<td><code>.well-known/register-conversion?impression-data=&amp;conversion-data={DATA}&amp;attribution-credit=100</code></td>
+<td> <code>.well-known/attribution-reporting/trigger-attribution&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;着信レポート&lt;/td&gt; &lt;td&gt;URLパラメータとして送信&lt;/td&gt; &lt;td&gt;リクエスト本文でJSONとして送信&lt;br&gt; &lt;br&gt;レポートデータは、&lt;strong&gt;リクエストの本文にJSONオブジェクトとして含まれ&lt;/strong&gt;次のキーを使います。&lt;br&gt; &lt;code&gt;source_event_id</code> ：以前は<code>impression-data</code>のアトリビューションソースに設定された64ビットのイベントIDでした。<br> <code>trigger_data</code> ：以前は<code>conversion-data</code>のアトリビューショントリガーリダイレクトの3ビットデータセットでした。<br><br> ⚠️ <code>credit</code>が削除されました。</td>
 </tr></tbody>
 </table>
+
+## アトリビューションレポート：すべてのリソース
+
+[アトリビューションレポート](/docs/privacy-sandbox/attribution-reporting-introduction)を参照してください。
